@@ -83,10 +83,10 @@ client.on('online', jid => {
 
 // "start" opens the socket and the XML stream
 client
-  .start('jabberfr.org') // Auto
+  // .start('anon.jabberfr.org') // Auto
   // .start('xmpp://localhost:5222') // TCP
   // .start('xmpps://localhost:5223') // TLS
-  // .start('ws://localhost:5280/xmpp-websocket') // Websocket
+  .start('ws://localhost:5280/xmpp-websocket') // Websocket
   // .start('wss://localhost:5281/xmpp-websocket') // Secure WebSocket
   .catch(err => {
     console.error('start failed', err)
