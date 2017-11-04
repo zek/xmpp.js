@@ -98,6 +98,8 @@ class Server extends EventEmitter {
 
     const jid = JID(xid(), this.domain, resource || xid())
 
+    conn.jid = jid
+
     conn.send(
       xml(
         'iq',
@@ -143,8 +145,6 @@ class Server extends EventEmitter {
   _onAuth(element, conn) {
     conn.send(xml('success', {xmlns: 'urn:ietf:params:xml:ns:xmpp-sasl'}))
   }
-
-  // <mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'><mechanism>ANONYMOUS</mechanism></mechanisms>
 
   _sendStreamFeatures(conn) {
     const mechanisms = ['ANONYMOUS']
