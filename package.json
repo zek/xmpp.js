@@ -1,5 +1,5 @@
 {
-  "name": "xmpp.js",
+  "name": "@xmpp",
   "version": "0.3.0",
   "private": true,
   "devDependencies": {
